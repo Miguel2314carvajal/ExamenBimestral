@@ -1,20 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Perros y Libros
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <h2>Perros</h2>
+    <div class="dog-container">
+      <div *ngFor="let dog of dogs">
+        <img [src]="dog" alt="Dog" class="dog-image" />
+      </div>
+    </div>
+
+    <h2>Libros</h2>
+    <div *ngFor="let book of books">
+      <p class="book-title">{{ book.title }}</p>
+    </div>
+    <ion-button (click)="saveAllToFirebase()">Guardar Libros y Perros en Firebase</ion-button>
   </div>
 </ion-content>
